@@ -21,6 +21,7 @@ export function PropertyCard({
   imageUrl = "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
   dates = "May 15-20",
   sharedWith = 2,
+  // costSplit = "equal",
 }: PropertyCardProps) {
   const navigate = useNavigate();
 

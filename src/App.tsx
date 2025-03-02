@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { useRoutes, Routes, Route } from "react-router-dom";
-import ThemeProvider from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/theme-provider";
 import Home from "./components/home";
 import SignIn from "./pages/signin";
 import SignUp from "./pages/signup";
@@ -13,6 +13,10 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import HowItWorks from "./pages/how-it-works";
 import Explore from "./pages/explore";
+import { Accordion } from "./components/ui/accordion";
+import { AccordionItem } from "./components/ui/accordion";
+import { AccordionTrigger } from "./components/ui/accordion";
+import { AccordionContent } from "./components/ui/accordion";
 import routes from "tempo-routes";
 
 function App() {
@@ -20,7 +24,35 @@ function App() {
     <ThemeProvider>
       <LanguageProvider>
         <AuthProvider>
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense
+            fallback={
+              <p>
+                Loading...
+                <Accordion type={"single"} collapsible={true}>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                    <AccordionContent>
+                      Yes. It adheres to the WAI-ARIA design pattern.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                    <AccordionTrigger>Is it styled?</AccordionTrigger>
+                    <AccordionContent>
+                      Yes. It comes with default styles that matches the other
+                      components' aesthetic.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-3">
+                    <AccordionTrigger>Is it animated?</AccordionTrigger>
+                    <AccordionContent>
+                      Yes. It's animated by default, but you can disable it if you
+                      prefer.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </p>
+            }
+          >
             <>
               {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
               <Routes>
@@ -34,6 +66,8 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/how-it-works" element={<HowItWorks />} />
                 <Route path="/explore" element={<Explore />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
               </Routes>
             </>
           </Suspense>

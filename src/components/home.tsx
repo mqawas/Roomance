@@ -18,8 +18,7 @@ function Home() {
                 Share luxury accommodations, split costs, make connections.
               </h1>
               <p className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
-                Experience high-end stays at half the price while meeting
-                like-minded travelers.
+                Match with compatible roommates and share beautiful living spaces together.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button size="lg">Find Your Next Stay</Button>

@@ -25,7 +25,7 @@ export function Header() {
               <Menu className="h-5 w-5" />
             </Button>
             <a href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold">LuxShare</span>
+              <span className="text-xl font-bold">Roomance</span>
             </a>
           </div>
           <nav className="hidden md:flex items-center space-x-6">

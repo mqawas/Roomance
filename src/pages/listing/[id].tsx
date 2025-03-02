@@ -169,9 +169,18 @@ export default function Listing() {
                         <dt>Total</dt>
                         <dd>$2,350</dd>
                       </div>
-                      <div className="flex justify-between text-sm text-muted-foreground">
-                        <dt>Your share (split with 2)</dt>
-                        <dd>$1,175</dd>
+                      <div className="space-y-4 pt-4 border-t">
+                        <h3 className="font-semibold">Cost Split Options</h3>
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-sm">
+                            <dt>Equal split (3 people)</dt>
+                            <dd>$783/person</dd>
+                          </div>
+                          <div className="flex justify-between text-sm text-muted-foreground">
+                            <dt>Custom split available</dt>
+                            <dd>Set your own split</dd>
+                          </div>
+                        </div>
                       </div>
                     </dl>
                   </div>
